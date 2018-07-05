@@ -14,3 +14,4 @@ if name == input_name and password == input_passwd :
     print 'hello young'
 else :
     print 'input error'
+
