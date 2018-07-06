@@ -15,8 +15,8 @@ def myprime(start , end):
 
 			if start%i == 0 :
 				break
+			
 			i = i + 1
-
 		if start <= i :
 			print start
 		start = start + 1
