@@ -39,8 +39,13 @@ def addfuction(a, b):
     print 'this is addfuction'
     return (a + b)
 
+#用在简单的函数
+##Lambda函数能接收任何数量的参数但只能返回一个表达式的值
+sub = lambda a, b : a - b
+
 
 print 'run mybug()'
 mybug()
 print addfuction(3, 6)
+print sub(10, 5)
 print 'runing stop'
