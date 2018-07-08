@@ -35,7 +35,66 @@ f.close()
 #
 print '===readlines==='
 f = open('hello.py', 'r')
-print 'f.readlines()',f.readlines()
+print 'f.readlines()',f.readlines()				# 返回的是列表
+f.close()
+
+#文件的随机读写 seek tell的使用
+#上面有一个知识点是说文件读取的时候，会连续读取
+#这里我们可以使用seek让光标定位到任何地方
+#使用tell返回光标所在位置
+
+# tell 使用
+f = open('hello.py' , 'r')
+str = f.read(3)
+print str
+position = f.tell()
+print '当前文件位置：',position
+
+str = f.read(3)
+print str
+position = f.tell()
+print '当前文件位置：',position
+f.close()
+
+#seek使用
+#如果在读写文件的过程中，需要从另外一个位置进行操作的话，可以使用seek()
+
+#seek(offset,from)有两个参数,偏移量和方向，
+#0:表示文件开头
+#1:表示当前位置
+#2:表示文件末尾
+
+# 打开一个已经存在的文件
+print '='*30
+f = open("hello.py", "r")
+str = f.read(30)
+print "读取的数据是 : ", str
+
+# 查找当前位置
+position = f.tell()
+print "当前文件位置 : ", position
+
+# 重新设置位置
+f.seek(5,0)							# 从开头往后输第五个
+
+# 查找当前位置
+position = f.tell()
+print "当前文件位置 : ", position
+
+# 重新设置位置
+f.seek(1,1)							# 从开头往后输第五个
+
+# 查找当前位置
+position = f.tell()
+print "当前文件位置 : ", position
+
+# 重新设置位置
+f.seek(-3,2)						# 从开头往后输第五个
+
+# 查找当前位置
+position = f.tell()
+print "当前文件位置 : ", position
+
 f.close()
 
 
