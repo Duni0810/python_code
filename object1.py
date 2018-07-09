@@ -41,8 +41,8 @@ del dog1
 #删除对象
 del dog
 
-print '还有2s后结束'
-time.sleep(2)
+print '还有1s后结束'
+time.sleep(1)
 
 
 print '='*40
@@ -63,7 +63,7 @@ class Animal(object):
         self.color = color
 
     def __test(self):
-    	
+
         print(self.__name)
         print(self.color)
 
@@ -96,6 +96,32 @@ D = Dog(name = "小花狗", color = "黄色")
 D.dogTest1()
 D.dogTest2()
 
+print '='*40
+
+
+# python 中是可以多继承的 父类中的方法属性，子类都可以继承
+
+class base(object):
+    def test(self):
+        print('----base test----')
+class A(base):
+    def test(self):
+        print('----A test----')
+
+# 定义一个父类
+class B(base):
+    def test(self):
+        print('----B test----')
+
+# 定义一个子类，继承自A、B
+class C(A, B):	#  会先调用 A 然后是 B  如果是class C(B, A):就先调用B
+    pass
+
+
+obj_C = C()
+obj_C.test()
+
+print(C.__mro__) #可以查看C类的对象搜索方法时的先后顺序
 
 
 
