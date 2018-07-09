@@ -7,6 +7,7 @@
 
 import time
 
+print 'test1'
 class animal(object) :
 
 	#初始化方法，创建对象后会自动被调用
@@ -41,7 +42,7 @@ time.sleep(2)
 
 
 print '='*40
-
+print 'test2'
 
 
 
