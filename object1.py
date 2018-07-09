@@ -121,7 +121,41 @@ class C(A, B):	#  会先调用 A 然后是 B  如果是class C(B, A):就先调�
 obj_C = C()
 obj_C.test()
 
+#python 中有一个mro算法 先不考虑这个问题
 print(C.__mro__) #可以查看C类的对象搜索方法时的先后顺序
 
 
+print '='*40
+
+#这里有一个重点，面试的时候肯定会问，就是：
+#			面向对象有什么特点： 封装，继承，多态
+#			封装： 比如类 
+#			继承： 减少代码的龙于
+#			多态： 定义时候知道知道传过来的同一种类型，但是执行可能是子类的对象
+
+print 'test3 多态'
+class F1(object):
+    def show(self):
+        print 'F1.show'
+
+class S1(F1):
+
+    def show(self):
+        print 'S1.show'
+
+class S2(F1):
+
+    def show(self):
+        print 'S2.show'
+
+
+# 这里体现了多态性 这函数调用什么方法看传入的什么类
+def Func(obj):
+    print obj.show()
+
+s1_obj = S1()
+Func(s1_obj) 
+
+s2_obj = S2()
+Func(s2_obj)
 
